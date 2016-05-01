@@ -18,6 +18,7 @@
 //C++ TO JAVA CONVERTER NOTE: The following #define macro was replaced in-line:
 //ORIGINAL LINE: #define NEXT_LEAST_J(LIST) { if ( gotoIteratorValueForNumList(LIST, lastJPlus1) && LIST->getIteratorNum() < j ) j = LIST->getIteratorNum(); }
 
+package TreeDistance;
 
 public class HDT
 {
@@ -135,7 +136,7 @@ public class HDT
             return;
         parent.markAlternative();
     }
-    public final INTTYPE_REST leafCount()
+    public final long leafCount()
     {
         if (countingVars.num == 0)
         {
@@ -185,11 +186,11 @@ public class HDT
         }
         up2date = true;
     }
-    public final INTTYPE_REST getResolvedTriplets()
+    public final long getResolvedTriplets()
     {
         return tripResolved;
     }
-    public final INTTYPE_REST getUnresolvedTriplets()
+    public final long getUnresolvedTriplets()
     {
         return tripUnresolved;
     }
@@ -201,14 +202,14 @@ public class HDT
     public boolean altMarked;
 
     // Used for extract+contract to work
-    public INTTYPE_REST numZeroes = new INTTYPE_REST();
+    public int numZeroes;
 
     // Quartets
     // Summing agreeing/disagreing resolved quartets
-    public INTTYPE_N4 quartResolvedAgree = new INTTYPE_N4();
-    public INTTYPE_N4 quartResolvedAgreeDiag = new INTTYPE_N4();
-    public INTTYPE_N4 quartSumE = new INTTYPE_N4();
-    public INTTYPE_N4 quartResolvedAgreeUpper = new INTTYPE_N4();
+    public long quartResolvedAgree;
+    public long quartResolvedAgreeDiag;
+    public long quartSumE;
+    public long quartResolvedAgreeUpper;
 
     private RootedTree goBackVariable;
     private NodeType type;
@@ -221,53 +222,53 @@ public class HDT
 
     // Soda13 color 0+1+...+d
     private CountingLinkedList countingVars;
-    private INTTYPE_REST n_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_square = new INTTYPE_REST();
+    private int n_circ;
+    private long n_circ_square;
 
     // Quartets
 //C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
 ///#if quartetsToo
-    private INTTYPE_REST n_0_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_0_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_square_paren_circ_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_circ_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_circ_square = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_paren_square_square = new INTTYPE_REST();
-    private INTTYPE_REST n_bracket_circ_square = new INTTYPE_REST();
-    private INTTYPE_REST n_0_arrow_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_0 = new INTTYPE_REST();
-    private INTTYPE_REST n_0_arrow_circ_circ = new INTTYPE_REST();
+    private long n_0_circ;
+    private long n_paren_0_circ;
+    private long n_circ_circ;
+    private long n_square_paren_circ_circ;
+    private long n_paren_circ_circ;
+    private long n_paren_circ_square;
+    private long n_circ_arrow_paren_square_square;
+    private long n_bracket_circ_square;
+    private long n_0_arrow_circ;
+    private long n_circ_arrow_0;
+    private long n_0_arrow_circ_circ;
 
     // Added by us
-    private INTTYPE_REST n_circ_arrow_square_square = new INTTYPE_REST();
+    private long n_circ_arrow_square_square;
 
     // Added by us for filling out tables
-    private INTTYPE_REST n_bracket_circ_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_circ_paren_square_square = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_circ = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_square = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_circ_circ_arrow_square = new INTTYPE_REST();
-    private INTTYPE_REST n_bracket_circ_paren_square_square = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_square_arrow_square = new INTTYPE_REST();
+    private long n_bracket_circ_circ;
+    private long n_paren_circ_paren_square_square;
+    private long n_circ_arrow_circ;
+    private long n_circ_arrow_square;
+    private long n_paren_circ_circ_arrow_square;
+    private long n_bracket_circ_paren_square_square;
+    private long n_circ_arrow_square_arrow_square;
     // New counters for calculating E
-    private INTTYPE_REST n_circ_square_triangle = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_square_arrow_triangle = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_square_triangle = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_circ_square_triangle = new INTTYPE_REST();
-    private INTTYPE_REST n_0_circ_square = new INTTYPE_REST();
-    private INTTYPE_REST n_0_circ_arrow_square = new INTTYPE_REST();
-    private INTTYPE_REST n_0_arrow_circ_square = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_square_arrow_0 = new INTTYPE_REST();
-    private INTTYPE_REST n_circ_arrow_0_square = new INTTYPE_REST();
-    private INTTYPE_REST n_paren_0_circ_square = new INTTYPE_REST();
-    private INTTYPE_REST n_bracket_circ_square_triangle = new INTTYPE_REST();
-    private INTTYPE_REST n_bracket_0_circ_square = new INTTYPE_REST();
+    private long n_circ_square_triangle;
+    private long n_circ_square_arrow_triangle;
+    private long n_circ_arrow_square_triangle;
+    private long n_paren_circ_square_triangle;
+    private long n_0_circ_square;
+    private long n_0_circ_arrow_square;
+    private long n_0_arrow_circ_square;
+    private long n_circ_square_arrow_0;
+    private long n_circ_arrow_0_square;
+    private long n_paren_0_circ_square;
+    private long n_bracket_circ_square_triangle;
+    private long n_bracket_0_circ_square;
 ///#endif
 
     // Summing resolved/resolved and unresolved/unresolved
-    private INTTYPE_REST tripResolved = new INTTYPE_REST();
-    private INTTYPE_REST tripUnresolved = new INTTYPE_REST();
+    //private INTTYPE_REST tripResolved = new INTTYPE_REST();
+    //private INTTYPE_REST tripUnresolved = new INTTYPE_REST();
 
     // Marking stuff as changed or updated
     private boolean up2date;
@@ -300,10 +301,12 @@ public class HDT
                 TemplatedLinkedList<HDT> newItem = factory.getTemplatedLinkedList();
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->data = child;
-                newItem.data.copyFrom(child);
+                //newItem.data.copyFrom(child);
+                newItem.data = child;
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->next = node->children;
-                newItem.next.copyFrom(node.children);
+                //newItem.next.copyFrom(node.children);
+                newItem.next = node.children;
                 node.children = newItem;
             };
         }
@@ -338,10 +341,12 @@ public class HDT
                         TemplatedLinkedList<HDT> newItem = factory.getTemplatedLinkedList();
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->data = child;
-                        newItem.data.copyFrom(child);
+                        //newItem.data.copyFrom(child);
+                        newItem.data = child;
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->next = newC->children;
-                        newItem.next.copyFrom(newC.children);
+                        //newItem.next.copyFrom(newC.children);
+                        newItem.next = newC.children;
                         newC.children = newItem;
                     };
                 }
@@ -384,12 +389,14 @@ public class HDT
                     newG.childParent = this;
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: lastG->data = newG;
-                    lastG.data.copyFrom(newG);
+                    //lastG.data.copyFrom(newG);
+                    lastG.data = newG;
 
                     // Delete the other
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: prevChild->next = i->next;
-                    prevChild.next.copyFrom(i.next);
+                    //prevChild.next.copyFrom(i.next);
+                    prevChild.next = i.next;
                     i = prevChild;
 
                     // Reset lastG
@@ -413,7 +420,8 @@ public class HDT
             // Recurse and save the "new child"
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: i->data = i->data->round(factory);
-            i.data.copyFrom(i.data.round(factory));
+            //i.data.copyFrom(i.data.round(factory));
+            i.data = i.data.round(factory);
             i.data.childParent = this;
 
             prevChild = i;
@@ -436,10 +444,12 @@ public class HDT
                         TemplatedLinkedList<HDT> newItem = factory.getTemplatedLinkedList();
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->data = i->data;
-                        newItem.data.copyFrom(i.data);
+                        //newItem.data.copyFrom(i.data);
+                        newItem.data = i.data;
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: newItem->next = newC->children;
-                        newItem.next.copyFrom(newC.children);
+                        //newItem.next.copyFrom(newC.children);
+                        newItem.next = newC.children;
                         newC.children = newItem;
                     };
                 }

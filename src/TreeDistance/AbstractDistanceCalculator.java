@@ -1,6 +1,5 @@
 package TreeDistance;
 
-package
 public abstract class AbstractDistanceCalculator {
     protected HDTFactory dummyHDTFactory;
     protected RootedTree t1;
@@ -56,10 +55,12 @@ public abstract class AbstractDistanceCalculator {
         if (beforeLargest != null) {
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: beforeLargest->next = largest->next;
-            beforeLargest.next.copyFrom(largest.next);
+            //beforeLargest.next.copyFrom(largest.next);
+            beforeLargest.next = largest.next;
 //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
 //ORIGINAL LINE: largest->next = v->children;
-            largest.next.copyFrom(v.children);
+            //largest.next.copyFrom(v.children);
+            largest.next = v.children;
             v.children = largest;
         }
 

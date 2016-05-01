@@ -43,7 +43,7 @@ public class RootedTree {
         TemplatedLinkedList<RootedTree> newItem = factory.getTemplatedLinkedList();
 
         //ORIGINAL LINE: newItem->data = t;
-        newItem.data=t.level;
+        newItem.data=t;
         newItem.next = children;
         children = newItem;
     }
