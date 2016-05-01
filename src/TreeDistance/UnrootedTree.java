@@ -56,7 +56,7 @@ public class UnrootedTree {
 
     public final ArrayList<UnrootedTree> getList() {
         dontRecurceOnMe = null;
-        ArrayList<UnrootedTree> list = new ArrayList<UnrootedTree * > ();
+        ArrayList<UnrootedTree> list = new ArrayList<UnrootedTree> ();
         getListImpl(list);
         return list;
     }

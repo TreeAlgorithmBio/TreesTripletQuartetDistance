@@ -7,10 +7,10 @@ import java.util.Iterator;
 //C++ TO JAVA CONVERTER TODO TASK: Java has no concept of 'private' inheritance:
 //ORIGINAL LINE: class TripletDistanceCalculator : private AbstractDistanceCalculator
 public class TripletDistanceCalculator extends AbstractDistanceCalculator {
-    private INTTYPE_REST n = new INTTYPE_REST();
-    private INTTYPE_REST totalNoTriplets = new INTTYPE_REST();
-    private INTTYPE_REST resolvedTriplets = new INTTYPE_REST();
-    private INTTYPE_REST unresolvedTriplets = new INTTYPE_REST();
+    private long n ;
+    private long totalNoTriplets ;
+    private long resolvedTriplets ;
+    private long unresolvedTriplets ;
 
     public TripletDistanceCalculator() {
         dummyHDTFactory = new HDTFactory(0);
@@ -20,7 +20,7 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         dummyHDTFactory = null;
     }
 
-    public final INTTYPE_REST calculateTripletDistance(String filename1, String filename2) {
+    public final long calculateTripletDistance(String filename1, String filename2) {
         UnrootedTree ut1 = null;
         UnrootedTree ut2 = null;
         RootedTree rt1 = null;
@@ -30,22 +30,25 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
 
         ut1 = parser.parseFile(filename1);
         if (ut1 == null || parser.isError()) {
-            std.cerr << "Error: Parsing of \"" << filename1 << "\" failed." << "\n";
-            std.cerr << "Aborting!" << "\n";
+
+            System.out.println("Error: Parsing of "+filename1+"failed.");
+            System.out.println("Aborting");
             return -1;
         }
 
         ut2 = parser.parseFile(filename2);
+
         if (ut2 == null || parser.isError()) {
-            cerr << "Parsing of file \"" << filename2 << "\" failed." << "\n";
-            cerr << "Aborting!" << "\n";
+
+            System.out.println("Error: Parsing of "+filename1+"failed.");
+            System.out.println("Aborting");
             return -1;
         }
 
         rt1 = ut1.convertToRootedTree(null);
         rt2 = ut2.convertToRootedTree(rt1.factory);
 
-        INTTYPE_REST result = calculateTripletDistance(rt1, rt2);
+        long result = calculateTripletDistance(rt1, rt2);
 
         if (ut1 != null) {
             if (ut1 != null)
@@ -67,16 +70,18 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         return result;
     }
 
-    public final INTTYPE_REST calculateTripletDistance(RootedTree t1, RootedTree t2) {
+    public final long calculateTripletDistance(RootedTree t1, RootedTree t2) {
         this.t1 = t1;
         t1.pairAltWorld(t2);
+
         if (t1.isError()) {
-            std.cerr << "The two trees do not have the same set of leaves." << std.endl;
-            std.cerr << "Aborting." << std.endl;
+
+            System.out.println("The two trees do not have the same set of leaves");
+            System.out.println("Aborting");
             return -1;
         }
 
-        // Section 3 of Soda13: Counting unresolved triplets and quartets in a single tree
+        // Section 3 : Counting unresolved triplets and quartets in a single tree
         countChildren(t1);
 
         hdt = HDT.constructHDT(t2, t1.maxDegree, dummyHDTFactory);
@@ -84,28 +89,28 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         resolvedTriplets = unresolvedTriplets = 0;
         n = t1.n;
         totalNoTriplets = Util.binom3(n);
-
         count(t1);
         // HDT is deleted in count if extracting and contracting!
-//C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-///#if ! doExtractAndContract
+
         hdt.factory = null;
-///#endif
+
 
         return totalNoTriplets - resolvedTriplets - unresolvedTriplets;
     }
 
-    public final ArrayList<ArrayList<INTTYPE_REST>> calculateAllPairsTripletDistance(String filename) {
+    public final ArrayList<ArrayList<long>> calculateAllPairsTripletDistance(String filename) {
+
         NewickParser parser = new NewickParser();
 
         ArrayList<UnrootedTree> unrootedTrees = parser.parseMultiFile(filename);
         if (unrootedTrees.size() == 0 || parser.isError()) {
-            std.cerr << "Error: Parsing of \"" << filename << "\" failed." << "\n";
-            std.cerr << "Aborting!" << "\n";
+
+            System.out.println("Error: Parsing of \"+filename1+\"failed.");
+            System.out.println("Aborting");
             System.exit(-1);
         }
 
-        ArrayList<ArrayList<INTTYPE_REST>> results = calculateAllPairsTripletDistance(unrootedTrees);
+        ArrayList<ArrayList<Long>> results = calculateAllPairsTripletDistance(unrootedTrees);
 
         for (Iterator<UnrootedTree> it = unrootedTrees.iterator(); it.hasNext(); ) {
             delete(it.next());
@@ -114,8 +119,8 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         return results;
     }
 
-    public final ArrayList<ArrayList<INTTYPE_REST>> calculateAllPairsTripletDistance(ArrayList<UnrootedTree*>trees) {
-        ArrayList<ArrayList<INTTYPE_REST>> results = new ArrayList<ArrayList<INTTYPE_REST>>(trees.size());
+    public final ArrayList<ArrayList<long>> calculateAllPairsTripletDistance(ArrayList<UnrootedTree*>trees) {
+        ArrayList<ArrayList<long>> results = new ArrayList<ArrayList<long>>(trees.size());
 
         RootedTree rt1;
         RootedTree rt2;
@@ -125,7 +130,7 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
                 rt1 = trees.get(r).convertToRootedTree(null);
                 rt2 = trees.get(c).convertToRootedTree(rt1.factory);
 
-                INTTYPE_REST distance = calculateTripletDistance(rt1, rt2);
+                long distance = calculateTripletDistance(rt1, rt2);
                 results.get(r).add(distance);
 
                 if (rt1.factory != null)
@@ -148,12 +153,12 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
             rt1 = unrootedTrees1.get(i).convertToRootedTree(null);
             rt2 = unrootedTrees2.get(i).convertToRootedTree(rt1.factory);
 
-            INTTYPE_REST dist = calculateTripletDistance(rt1, rt2);
+            long dist = calculateTripletDistance(rt1, rt2);
 
-            INTTYPE_REST n = get_n();
-            INTTYPE_REST totalNoTriplets = get_totalNoTriplets();
-            INTTYPE_REST resolved = get_resolvedTriplets();
-            INTTYPE_REST unresolved = get_unresolvedTriplets();
+            long n = get_n();
+            long totalNoTriplets = get_totalNoTriplets();
+            long resolved = get_resolvedTriplets();
+            long unresolved = get_unresolvedTriplets();
             double dist_norm = (double) dist / (double) totalNoTriplets;
             double resolved_norm = (double) resolved / (double) totalNoTriplets;
             double unresolved_norm = (double) unresolved / (double) totalNoTriplets;
@@ -162,8 +167,8 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         }
     }
 
-    public final ArrayList<INTTYPE_REST> pairs_triplet_distance(ArrayList<UnrootedTree> unrootedTrees1, ArrayList<UnrootedTree> unrootedTrees2) {
-        ArrayList<INTTYPE_REST> res = new ArrayList<INTTYPE_REST>();
+    public final ArrayList<long> pairs_triplet_distance(ArrayList<UnrootedTree> unrootedTrees1, ArrayList<UnrootedTree> unrootedTrees2) {
+        ArrayList<long> res = new ArrayList<long>();
 
         RootedTree rt1;
         RootedTree rt2;
@@ -172,14 +177,14 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
             rt1 = unrootedTrees1.get(i).convertToRootedTree(null);
             rt2 = unrootedTrees2.get(i).convertToRootedTree(rt1.factory);
 
-            INTTYPE_REST dist = calculateTripletDistance(rt1, rt2);
+            long dist = calculateTripletDistance(rt1, rt2);
             res.add(dist);
         }
 
         return res;
     }
 
-    public final ArrayList<INTTYPE_REST> pairs_triplet_distance(String filename1, String filename2) {
+    public final ArrayList<long> pairs_triplet_distance(String filename1, String filename2) {
         NewickParser parser = new NewickParser();
 
         ArrayList<UnrootedTree> unrootedTrees1 = parser.parseMultiFile(filename1);
@@ -200,19 +205,19 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
     }
 
     // accessors
-    public final INTTYPE_REST get_n() {
+    public final long get_n() {
         return n;
     }
 
-    public final INTTYPE_REST get_resolvedTriplets() {
+    public final long get_resolvedTriplets() {
         return resolvedTriplets;
     }
 
-    public final INTTYPE_REST get_unresolvedTriplets() {
+    public final long get_unresolvedTriplets() {
         return unresolvedTriplets;
     }
 
-    public final INTTYPE_REST get_totalNoTriplets() {
+    public final long get_totalNoTriplets() {
         return totalNoTriplets;
     }
 

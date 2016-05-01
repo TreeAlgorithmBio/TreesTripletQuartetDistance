@@ -1,14 +1,47 @@
 package TreeDistance;
 
-public class NewickParser {
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
-    public UnrootedTree parseFile(String filename) {
-        // Read file
-        ifstream infile = new ifstream();
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-        // Open file at the end!
-        infile.open(filename);
-        if (infile) {
+public class NewickParser {
+
+    public UnrootedTree parseFile(String filename) {
+
+        // Read file
+
+        BufferedReader br = null;
+
+        try {
+
+            String sCurrentLine;
+            StringBuffer stringBuffer = new StringBuffer();
+            br = new BufferedReader(new FileReader(filename));
+
+            while ((sCurrentLine = br.readLine()) != null) {
+
+                stringBuffer.append(sCurrentLine);
+            }
+
+            UnrootedTree t = parse();
+            return t;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+
+
+
+            /*FileInputStream infile = new FileInputStream();
+
+
+        boolean read = infile.read(filename);
+        if (read) {
             String line;
             std.stringstream ss = new std.stringstream();
             while (true) {
@@ -32,19 +65,47 @@ public class NewickParser {
 
             // replace all whitespace
             eraseWhitespace(str);
+            */
+        }
+
+        return null;
+    }
+
+
+
+
+    public UnrootedTree parseMultiFile(String filename) {
+
+
+        // Read file
+
+        BufferedReader br = null;
+
+        try {
+
+            String sCurrentLine;
+            StringBuffer stringBuffer = new StringBuffer();
+            br = new BufferedReader(new FileReader(filename));
+
+            while ((sCurrentLine = br.readLine()) != null) {
+
+                stringBuffer.append(sCurrentLine);
+            }
 
             UnrootedTree t = parse();
             return t;
-        } else { // Couldn't open file!
-            cerr << "Couldn't open file \"" << filename << "\"!" << std.endl;
-            parseError = true;
-            System.exit(-1);
-        }
-    }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
-    public ArrayList<UnrootedTree> parseMultiFile(String filename) {
-        ifstream infile = new ifstream();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        /*ifstream infile = new ifstream();
 
         // Open
         infile.open(filename);
@@ -76,35 +137,39 @@ public class NewickParser {
             cerr << "Couldn't open file \"" << filename << "\"!" << std.endl;
             parseError = true;
             System.exit(-1);
-        }
+        }*/
+
+
+        return null;
     }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+
     public UnrootedTree parseStr(String inputStr) {
-        str = inputStr;
+
+        String str = inputStr;
         return parse();
     }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
     public boolean isError() {
-        return parseError;
+        return true;
     }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
-    public int getPos() {
+
+    /*public int getPos() {
+
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";
             parseError = true;
             return -1;
         }
         return distance(str.begin(), it);
-    }
+    }*/
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+
     public UnrootedTree parse() {
         parseError = false;
-        it = str.begin();
-        strEnd = str.end();
+        char it = str.charAt(0);
+        char strEnd = str.charAt(str.length()-1);
 
         if (*str.rbegin() != ';')
         {
@@ -148,7 +213,6 @@ public class NewickParser {
         return new UnrootedTree(parseName());
     }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
     public UnrootedTree parseInternal() {
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";

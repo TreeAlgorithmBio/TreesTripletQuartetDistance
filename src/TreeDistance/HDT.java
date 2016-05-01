@@ -111,4 +111,8 @@ public class HDT {
         theList.num = num;
         theList.value = value;
     }
+
+    public static HDT constructHDT(RootedTree t2, int maxDegree, HDTFactory dummyHDTFactory) {
+
+    }
 }

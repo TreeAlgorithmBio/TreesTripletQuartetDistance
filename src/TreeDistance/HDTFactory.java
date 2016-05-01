@@ -42,6 +42,10 @@ public class HDTFactory {
         currentLocationTLL = 1;
     }
 
+    public HDTFactory(int i) {
+
+    }
+
     //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
     public void dispose() {
         {

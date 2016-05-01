@@ -1,16 +1,15 @@
 package TreeDistance;
 
 public class Util {
-
-    public static INTTYPE_REST binom2(INTTYPE_REST n) {
+    
+    public static long binom2(long n) {
         return ((n - 1) * n) / 2;
     }
 
-    public static INTTYPE_REST binom3(INTTYPE_REST n) {
+    public static long binom3(long n) {
         return ((n - 2) * (n - 1) * n) / 6;
     }
 
-    public static INTTYPE_N4 binom4(INTTYPE_REST n) {
-        return ((INTTYPE_N4) (n - 3) * (n - 2) * (n - 1) * n) / 24;
+    public static long binom4(long n) { return ((long) (n - 3) * (n - 2) * (n - 1) * n) / 24;
     }
 }
