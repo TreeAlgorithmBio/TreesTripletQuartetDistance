@@ -18,7 +18,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
 
 
     public QuartetDistanceCalculator() {
-        dummyHDTFactory = new HDTFactory(0);
+        dummyHDTFactory = new HDTFactory();
     }
 
     public void dispose() {

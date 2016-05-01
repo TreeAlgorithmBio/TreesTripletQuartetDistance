@@ -1,23 +1,21 @@
 package TreeDistance;
 
 public class GlobalMembers {
-//C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-    ///#if _WIN32
-//C++ TO JAVA CONVERTER WARNING: The following constructor is declared outside of its associated class:
-    public static class__declspec(dllexport UnnamedParameter1)TripletDistanceCalculator {
-        ///#endif
+
+
+    /*public static class__declspec(dllexport UnnamedParameter1)TripletDistanceCalculator {
+
         public static <T> void assert_equal (T val, T exp)
         {
             assert_equal(val, exp, "Assertion failed!");
-        }
-//C++ TO JAVA CONVERTER NOTE: Java does not allow default values for parameters. Overloaded methods are inserted above:
+        }*/
 //ORIGINAL LINE: void assert_equal(const T &val, const T &exp, const String msg = "Assertion failed!")
 
 
 
-    public static void usage(tangible.RefObject<String> programName) {
+    public static void usage(String programName) {
         System.out.print("Usage: ");
-        System.out.print(programName.argValue);
+        System.out.print(programName);
         System.out.print(" [-v] <filename1> <filename2>");
         System.out.print("\n");
         System.out.print("\n");
@@ -60,12 +58,12 @@ public class GlobalMembers {
         boolean verbose = false;
 
         if (argc < 3) {
-            std.cerr << "Error: Not enough parameters!" << std.endl;
+            System.out.println("Error: Not enough parameters!");
             usage(args[0]);
             return -1;
         }
 
-        if (argc == 4 && strcmp(args[1], "-v") == 0) {
+        if (argc == 4 && !args[1].equals("-v")) {
             verbose = true;
         }
 
@@ -73,7 +71,7 @@ public class GlobalMembers {
         String filename2 = args[argc - 1];
 
         TripletDistanceCalculator tripletCalc = new TripletDistanceCalculator();
-        INTTYPE_REST dist = tripletCalc.calculateTripletDistance(filename1, filename2);
+        long dist = tripletCalc.calculateTripletDistance(filename1, filename2);
 
         if (dist == -1) {
             System.exit(-1);
@@ -83,10 +81,10 @@ public class GlobalMembers {
             System.out.print(dist);
             System.out.print("\n");
         } else {
-            INTTYPE_REST n = tripletCalc.get_n();
-            INTTYPE_REST totalNoTriplets = tripletCalc.get_totalNoTriplets();
-            INTTYPE_REST resolved = tripletCalc.get_resolvedTriplets();
-            INTTYPE_REST unresolved = tripletCalc.get_unresolvedTriplets();
+            long n = tripletCalc.get_n();
+            long totalNoTriplets = tripletCalc.get_totalNoTriplets();
+            long resolved = tripletCalc.get_resolvedTriplets();
+            long unresolved = tripletCalc.get_unresolvedTriplets();
             double dist_norm = (double) dist / (double) totalNoTriplets;
             double resolved_norm = (double) resolved / (double) totalNoTriplets;
             double unresolved_norm = (double) unresolved / (double) totalNoTriplets;
@@ -111,7 +109,8 @@ public class GlobalMembers {
 
     }public static <T> void assert_equal(T val, T exp, String msg) {
         if (val != exp) {
-            std.cerr << msg.compareTo() < 0 < <" Found " << val << " but expected " << exp << std.endl;
+
+            System.out.println("msg.compareTo() < 0 < Found << val <<  but expected << exp ");
             System.exit(-1);
         }
     }

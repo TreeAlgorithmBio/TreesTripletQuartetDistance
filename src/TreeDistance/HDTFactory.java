@@ -42,7 +42,7 @@ public class HDTFactory {
         currentLocationTLL = 1;
     }
 
-    public HDTFactory(int i) {
+    public HDTFactory() {
 
     }
 

@@ -13,7 +13,7 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
     private long unresolvedTriplets ;
 
     public TripletDistanceCalculator() {
-        dummyHDTFactory = new HDTFactory(0);
+        dummyHDTFactory = new HDTFactory();
     }
 
     public void dispose() {
