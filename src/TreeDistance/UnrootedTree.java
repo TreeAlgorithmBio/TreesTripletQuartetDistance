@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class UnrootedTree {
+
     public String name;
-    //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
-//ORIGINAL LINE: unsigned int level;
     public int level;
     public UnrootedTree dontRecurceOnMe;
     public int maxDegree;
@@ -24,6 +23,7 @@ public class UnrootedTree {
     }
 
     public void dispose() {
+
         for (Iterator<UnrootedTree> i = edges.iterator(); i.hasNext(); ) {
             UnrootedTree t = i.next();
             if (dontRecurceOnMe != t) {
@@ -81,22 +81,14 @@ public class UnrootedTree {
     }
 
     private void toDotImpl() {
+
         System.out.print("n");
         System.out.print(this);
         System.out.print("[label=\"");
         System.out.print(name);
-        System.out.print("\"];");
-        System.out.print("\n");
-            /*
-			if (isLeaf())
-			{
-				cout << "n" << this << "[label=\"" << name << "\"];" << endl;
-			}
-			else
-			{
-				cout << "n" << this << ";" << endl;
-			}
-			*/
+        System.out.println("\"];");
+        System.out.println(isLeaf());
+
 
         for (Iterator<UnrootedTree> i = edges.iterator(); i.hasNext(); ) {
             UnrootedTree t = i.next();

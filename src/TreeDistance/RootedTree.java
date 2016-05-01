@@ -1,5 +1,8 @@
 package TreeDistance;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 public class RootedTree {
 
     public int level;
@@ -34,10 +37,11 @@ public class RootedTree {
     }
 
     public void addChild(RootedTree t) {
+
         numChildren++;
         t.parent = this;
         TemplatedLinkedList<RootedTree> newItem = factory.getTemplatedLinkedList();
-        //C++ TO JAVA CONVERTER WARNING: The following line was determined to be a copy assignment (rather than a reference assignment) - this should be verified and a 'copyFrom' method should be created if it does not yet exist:
+
         //ORIGINAL LINE: newItem->data = t;
         newItem.data=t.level;
         newItem.next = children;
@@ -63,7 +67,7 @@ public class RootedTree {
     }
 
     public ArrayList<RootedTree> getList() {
-        ArrayList<RootedTree> list = new ArrayList<RootedTree * > ();
+        ArrayList<RootedTree> list = new ArrayList<RootedTree>();
         getListImpl(list);
         return list;
     }

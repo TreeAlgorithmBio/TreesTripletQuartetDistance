@@ -2,83 +2,85 @@ package TreeDistance;
 
 public class CountingLinkedList {
     public static CountingLinkedList dummyLL = new CountingLinkedList();
+
     // For triplets
-    public INTTYPE_REST n_i = new INTTYPE_REST();
-    public INTTYPE_REST n_i_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ = new INTTYPE_REST();
+    public long n_i;
+    public long n_i_circ;
+    public long n_paren_ii;
+    public long n_i_arrow_circ;
+
     // For quartets
-//C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-///#if quartetsToo
-    public INTTYPE_REST n_0_i = new INTTYPE_REST();
-    public INTTYPE_REST n_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_0_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_i_paren_0_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_paren_circ_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_paren_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_i_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_0_i = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_i_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_0_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_circ_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_i_paren_0_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_0_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_circ_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_i_paren_0_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_0_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_0 = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_0_arrow_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_paren_0_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_paren_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_arrow_paren_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_0_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_arrow_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_ii_arrow_0 = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_ii_arrow_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_circ_circ_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_0_arrow_i_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ_arrow_0 = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_0_arrow_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_arrow_i_arrow_i = new INTTYPE_REST();
+
+    public long n_0_i;
+    public long n_ii;
+    public long n_0_paren_ii;
+    public long n_circ_paren_ii;
+    public long n_i_paren_0_circ;
+    public long n_i_paren_circ_circ;
+    public long n_i_paren_circ_square;
+    public long n_bracket_i_circ;
+    public long n_paren_0_i;
+    public long n_paren_i_circ;
+    public long n_paren_0_paren_ii;
+    public long n_paren_circ_paren_ii;
+    public long n_paren_i_paren_0_circ;
+    public long n_bracket_0_paren_ii;
+    public long n_bracket_circ_paren_ii;
+    public long n_bracket_i_paren_0_circ;
+    public long n_0_arrow_i;
+    public long n_i_arrow_0;
+    public long n_i_arrow_i;
+    public long n_circ_arrow_i;
+    public long n_0_arrow_paren_ii;
+    public long n_i_arrow_paren_0_circ;
+    public long n_i_arrow_paren_circ_square;
+    public long n_circ_arrow_paren_ii;
+    public long n_i_arrow_0_circ;
+    public long n_i_arrow_circ_circ;
+    public long n_i_arrow_circ_square;
+    public long n_circ_arrow_ii;
+    public long n_paren_ii_arrow_0;
+    public long n_paren_ii_arrow_circ;
+    public long n_paren_circ_circ_arrow_i;
+    public long n_0_arrow_i_arrow_i;
+    public long n_i_arrow_circ_arrow_0;
+    public long n_i_arrow_0_arrow_circ;
+    public long n_circ_arrow_i_arrow_i;
+
     // Added by us
-    public INTTYPE_REST n_i_arrow_paren_circ_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_0_arrow_ii = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_0_circ_arrow_i = new INTTYPE_REST();
+    public long n_i_arrow_paren_circ_circ;
+    public long n_0_arrow_ii;
+    public long n_paren_0_circ_arrow_i;
+
     // Figure 15 counters (part 1)
     public CountingLinkedListNumOnly n_i_j; // also used for E calculation
-    public INTTYPE_REST n_0_arrow_i_circ = new INTTYPE_REST(); // also used for E calculation
+    public long n_0_arrow_i_circ; // also used for E calculation
     // Added by us for filling out tables
     // A
-    public INTTYPE_REST n_paren_i_paren_circ_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_i_paren_circ_circ = new INTTYPE_REST();
+    public long n_paren_i_paren_circ_circ;
+    public long n_bracket_i_paren_circ_circ;
     public CountingLinkedListNumOnly n_j_arrow_i;
-    public INTTYPE_REST n_paren_i_paren_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_i_paren_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ_arrow_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_arrow_circ_arrow_square = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_circ_square_arrow_i = new INTTYPE_REST();
+    public long n_paren_i_paren_circ_square;
+    public long n_bracket_i_paren_circ_square;
+    public long n_i_arrow_circ_arrow_circ;
+    public long n_i_arrow_circ_arrow_square;
+    public long n_paren_circ_square_arrow_i;
     public CountingLinkedListNumOnly n_i_arrow_j;
     // New counters for calculating E
-    public INTTYPE_REST n_i_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_i_circ_arrow_square = new INTTYPE_REST();
-    public INTTYPE_REST n_circ_square_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_i_circ_square = new INTTYPE_REST();
-    public INTTYPE_REST n_0_i_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_i_circ_arrow_0 = new INTTYPE_REST();
-    public INTTYPE_REST n_0_i_arrow_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_0_circ_arrow_i = new INTTYPE_REST();
-    public INTTYPE_REST n_paren_0_i_circ = new INTTYPE_REST();
-    public INTTYPE_REST n_bracket_i_circ_square = new INTTYPE_REST();
-///#endif
-    public INTTYPE_REST n_bracket_0_i_circ = new INTTYPE_REST();
+    public long n_i_circ_square;
+    public long n_i_circ_arrow_square;
+    public long n_circ_square_arrow_i;
+    public long n_paren_i_circ_square;
+    public long n_0_i_circ;
+    public long n_i_circ_arrow_0;
+    public long n_0_i_arrow_circ;
+    public long n_0_circ_arrow_i;
+    public long n_paren_0_i_circ;
+    public long n_bracket_i_circ_square;
+
+    public long n_bracket_0_i_circ;
     // More general stuff
-//C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
-//ORIGINAL LINE: unsigned int num;
+
     public int num;
     public NodeType type;
     public CountingLinkedList next;
@@ -99,8 +101,7 @@ public class CountingLinkedList {
         n_i_arrow_circ = 0;
 
         // Quartets
-//C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-///#if quartetsToo
+
         n_0_i = 0;
         n_ii = 0;
         n_0_paren_ii = 0;
@@ -147,7 +148,7 @@ public class CountingLinkedList {
         n_0_arrow_i_circ = 0;
 
         // Added by us for filling out tables
-        // A
+
         n_paren_i_paren_circ_circ = 0;
         n_bracket_i_paren_circ_circ = 0;
         n_paren_i_paren_circ_square = 0;
@@ -168,20 +169,18 @@ public class CountingLinkedList {
         n_paren_0_i_circ = 0;
         n_bracket_i_circ_square = 0;
         n_bracket_0_i_circ = 0;
-///#endif
+
     }
 
     public final void initialize() {
         next = null;
-//C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-///#if quartetsToo
+
         n_i_j = null;
         n_j_arrow_i = n_i_arrow_j = null;
-///#endif
+
     }
 
-    //C++ TO JAVA CONVERTER TODO TASK: There is no preprocessor in Java:
-///#if quartetsToo
+    
     public final void resetIterator() {
         iterator = this;
         if (n_i_j != null) {
@@ -198,8 +197,7 @@ public class CountingLinkedList {
         n_i_arrow_j_is_reset = true;
     }
 
-    //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
-//ORIGINAL LINE: unsigned int getIteratorNum()
+    
     public final int getIteratorNum() {
         return iterator.num;
     }
@@ -208,8 +206,6 @@ public class CountingLinkedList {
         return iterator == null;
     }
 
-    //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
-//ORIGINAL LINE: CountingLinkedList* getIteratorValue(unsigned int j)
     public final CountingLinkedList getIteratorValue(int j) {
         while (!iteratorHasEnded() && iterator.num < j) {
             if (iterator.type == NodeType.End) {
@@ -221,7 +217,6 @@ public class CountingLinkedList {
         if (iteratorHasEnded() || iterator.num > j) {
             return dummyLL;
         }
-            /*iterator->num == j*/
         return iterator;
     }
 
@@ -251,5 +246,5 @@ public class CountingLinkedList {
             return this.ordinal();
         }
     }
-///#endif
+
 }

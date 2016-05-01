@@ -149,11 +149,11 @@ public class NewickParser {
 
         String str = inputStr;
         return parse();
-    }
+    }*/
 
     public boolean isError() {
         return true;
-    }*/
+    }
 
 
     /*public int getPos() {

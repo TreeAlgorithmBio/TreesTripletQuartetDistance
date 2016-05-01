@@ -1,7 +1,7 @@
 package TreeDistance;
 
 public class CountingLinkedListNumOnly {
-    public INTTYPE_REST value = new INTTYPE_REST();
+    public long value;
     //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
 //ORIGINAL LINE: unsigned int num;
     public int num;
@@ -28,8 +28,8 @@ public class CountingLinkedListNumOnly {
     }
 
     //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
-//ORIGINAL LINE: INTTYPE_REST getIteratorValue(unsigned int j)
-    public final INTTYPE_REST getIteratorValue(int j) {
+//ORIGINAL LINE: long getIteratorValue(unsigned int j)
+    public final long getIteratorValue(int j) {
         while (!iteratorHasEnded() && iterator.num < j) {
             if (iterator.type == NodeType.End) {
                 iterator = null;
