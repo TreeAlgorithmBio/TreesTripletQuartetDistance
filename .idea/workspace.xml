@@ -22,44 +22,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TripletDistanceCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/TripletDistanceCalculator.java">
+      <file leaf-file-name="GlobalMembers.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeDistance/GlobalMembers.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractDistanceCalculator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TreeDistance/AbstractDistanceCalculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.1831684">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MemoryAllocator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TreeDistance/MemoryAllocator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Try.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Try.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
               <folding>
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#3659#3676#0" expanded="true" />
-                <element signature="e#5628#5634#0" expanded="true" />
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#243#244#0" expanded="true" />
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#351#352#0" expanded="true" />
+                <element signature="e#4920#4921#0" expanded="true" />
+                <element signature="e#4955#4956#0" expanded="true" />
+                <element signature="e#5015#5016#0" expanded="true" />
+                <element signature="e#5052#5053#0" expanded="true" />
+                <element signature="e#16897#16898#0" expanded="true" />
+                <element signature="e#16936#16937#0" expanded="true" />
+                <element signature="e#25059#25060#0" expanded="true" />
+                <element signature="e#25104#25105#0" expanded="true" />
+                <element signature="e#25167#25168#0" expanded="true" />
+                <element signature="e#25213#25214#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewickParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/NewickParser.java">
+      <file leaf-file-name="HDT.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HDT.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+              <caret line="694" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3719#3720#0" expanded="true" />
-                <element signature="e#3746#3747#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RootedTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/RootedTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1845#1857#0" expanded="true" />
-                <element signature="e#2095#2115#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
+                <element signature="e#1503#1504#0" expanded="true" />
+                <element signature="e#6072#6073#0" expanded="true" />
+                <element signature="e#6107#6108#0" expanded="true" />
+                <element signature="e#6167#6168#0" expanded="true" />
+                <element signature="e#6204#6205#0" expanded="true" />
+                <element signature="e#18049#18050#0" expanded="true" />
+                <element signature="e#18088#18089#0" expanded="true" />
+                <element signature="e#26211#26212#0" expanded="true" />
+                <element signature="e#26256#26257#0" expanded="true" />
+                <element signature="e#26319#26320#0" expanded="true" />
+                <element signature="e#26365#26366#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,68 +105,24 @@
       <file leaf-file-name="HDT.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TreeDistance/HDT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.555555">
-              <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HDTFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/HDTFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountingLinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/CountingLinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="218" column="9" selection-start-line="218" selection-start-column="9" selection-end-line="218" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountingLinkedListNumOnly.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/CountingLinkedListNumOnly.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.888889">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              <caret line="731" column="0" selection-start-line="731" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
               <folding>
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#706#707#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#832#833#0" expanded="true" />
+                <element signature="e#1350#1351#0" expanded="true" />
+                <element signature="e#1395#1396#0" expanded="true" />
+                <element signature="e#1457#1458#0" expanded="true" />
+                <element signature="e#1503#1504#0" expanded="true" />
+                <element signature="e#6072#6073#0" expanded="true" />
+                <element signature="e#6107#6108#0" expanded="true" />
+                <element signature="e#6167#6168#0" expanded="true" />
+                <element signature="e#6204#6205#0" expanded="true" />
+                <element signature="e#18049#18050#0" expanded="true" />
+                <element signature="e#18088#18089#0" expanded="true" />
+                <element signature="e#26211#26212#0" expanded="true" />
+                <element signature="e#26256#26257#0" expanded="true" />
+                <element signature="e#26319#26320#0" expanded="true" />
+                <element signature="e#26365#26366#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefineConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/DefineConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalMembers.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TreeDistance/GlobalMembers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.18297102">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/TreeDistance/TemplatedLinkedList.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/voider.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/Util.java" />
-        <option value="$PROJECT_DIR$/src/TreeDistance/HDTFactory.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/TripletDistanceCalculator.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/NewickParser.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/UnrootedTree.java" />
@@ -164,8 +156,12 @@
         <option value="$PROJECT_DIR$/src/TreeDistance/CountingLinkedListNumOnly.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/DefineConstants.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/CountingLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/TreeDistance/HDT.java" />
         <option value="$PROJECT_DIR$/src/TreeDistance/GlobalMembers.java" />
+        <option value="$PROJECT_DIR$/src/TreeDistance/HDTFactory.java" />
+        <option value="$PROJECT_DIR$/src/TreeDistance/MemoryAllocator.java" />
+        <option value="$PROJECT_DIR$/src/Try.java" />
+        <option value="$PROJECT_DIR$/src/HDT.java" />
+        <option value="$PROJECT_DIR$/src/TreeDistance/HDT.java" />
       </list>
     </option>
   </component>
@@ -231,7 +227,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TreeDistance" />
+              <option name="myItemId" value="Try.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ComputeTripletQuatretDistanceForTrees" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ComputeTripletQuatretDistanceForTrees" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,6 +256,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TreeDistance" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -618,22 +632,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/TreeDistance/AbstractDistanceCalculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeDistance/MemoryAllocator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TreeDistance/QuartetCalc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -782,24 +780,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TreeDistance/HDTFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeDistance/HDT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.555555">
-          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.17326732">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TreeDistance/GlobalMembers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.18297102">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeDistance/MemoryAllocator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Try.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#4920#4921#0" expanded="true" />
+            <element signature="e#4955#4956#0" expanded="true" />
+            <element signature="e#5015#5016#0" expanded="true" />
+            <element signature="e#5052#5053#0" expanded="true" />
+            <element signature="e#16897#16898#0" expanded="true" />
+            <element signature="e#16936#16937#0" expanded="true" />
+            <element signature="e#25059#25060#0" expanded="true" />
+            <element signature="e#25104#25105#0" expanded="true" />
+            <element signature="e#25167#25168#0" expanded="true" />
+            <element signature="e#25213#25214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HDT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="694" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
+          <folding>
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1503#1504#0" expanded="true" />
+            <element signature="e#6072#6073#0" expanded="true" />
+            <element signature="e#6107#6108#0" expanded="true" />
+            <element signature="e#6167#6168#0" expanded="true" />
+            <element signature="e#6204#6205#0" expanded="true" />
+            <element signature="e#18049#18050#0" expanded="true" />
+            <element signature="e#18088#18089#0" expanded="true" />
+            <element signature="e#26211#26212#0" expanded="true" />
+            <element signature="e#26256#26257#0" expanded="true" />
+            <element signature="e#26319#26320#0" expanded="true" />
+            <element signature="e#26365#26366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeDistance/HDT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="731" column="0" selection-start-line="731" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
+          <folding>
+            <element signature="e#1350#1351#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1457#1458#0" expanded="true" />
+            <element signature="e#1503#1504#0" expanded="true" />
+            <element signature="e#6072#6073#0" expanded="true" />
+            <element signature="e#6107#6108#0" expanded="true" />
+            <element signature="e#6167#6168#0" expanded="true" />
+            <element signature="e#6204#6205#0" expanded="true" />
+            <element signature="e#18049#18050#0" expanded="true" />
+            <element signature="e#18088#18089#0" expanded="true" />
+            <element signature="e#26211#26212#0" expanded="true" />
+            <element signature="e#26256#26257#0" expanded="true" />
+            <element signature="e#26319#26320#0" expanded="true" />
+            <element signature="e#26365#26366#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeDistance/AbstractDistanceCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1831684">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
           <folding />
         </state>
       </provider>

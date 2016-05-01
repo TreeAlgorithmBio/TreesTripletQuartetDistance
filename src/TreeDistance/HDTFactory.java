@@ -1,7 +1,7 @@
 package TreeDistance;
 
 public class HDTFactory {
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+
     public HDTFactory(int numD, HDTFactory copyMemAllocFrom) {
         this.numD = numD;
 
@@ -46,7 +46,6 @@ public class HDTFactory {
 
     }
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
     public void dispose() {
         {
             HDT current = createdHDTs;

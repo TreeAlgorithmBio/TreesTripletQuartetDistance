@@ -22,13 +22,8 @@ public class MemoryAllocator<type> {
         this.size = size;
         freelist = createdList = currentList = null;
         numUses = 0;
-            /*
-				2mb (subtracting 2 types, 1 used for createdList and currentList,
-				1 to make sure C++ have space for the "there's x of these" data)
-				divided among "arrays" of size "size"
-			*/
-//C++ TO JAVA CONVERTER TODO TASK: There is no Java equivalent to 'sizeof':
-        chunks = (2 * 1024 * 1024 - 2 * sizeof(type)) / (sizeof(type) * size);
+        int sizeoftype = 1;
+        chunks = (2 * 1024 * 1024 - 2 * sizeoftype) / (sizeoftype * size);
         getMoreSpace();
     }
 
@@ -36,9 +31,8 @@ public class MemoryAllocator<type> {
         voider current = createdList;
         while (current != null) {
             voider next = current.next;
-//C++ TO JAVA CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in Java:
-            type[] asRealType = reinterpret_cast < type * > (current);
-            asRealType = null;
+            //type[] asRealType = reinterpret_cast < type * > (current);
+            //asRealType = null;
             current = next;
         }
     }

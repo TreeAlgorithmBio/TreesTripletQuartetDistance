@@ -50,17 +50,16 @@ public class GlobalMembers {
         System.out.print("\n");
     }
 
-        public static int Main(int argc, String[] args) {
-        if (argc == 1) {
-            usage(args[0]);
-        }
+        public static void main(int argc, String[] args) {
+
+        if (argc == 1) usage(args[0]);
 
         boolean verbose = false;
 
         if (argc < 3) {
             System.out.println("Error: Not enough parameters!");
             usage(args[0]);
-            return -1;
+
         }
 
         if (argc == 4 && !args[1].equals("-v")) {
@@ -107,7 +106,9 @@ public class GlobalMembers {
             System.out.print("\n");
         }
 
-    }public static <T> void assert_equal(T val, T exp, String msg) {
+    }
+
+    public static <T> void assert_equal(T val, T exp, String msg) {
         if (val != exp) {
 
             System.out.println("msg.compareTo() < 0 < Found << val <<  but expected << exp ");
