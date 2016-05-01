@@ -74,7 +74,7 @@ public class NewickParser {
 
 
 
-    public UnrootedTree parseMultiFile(String filename) {
+   public UnrootedTree parseMultiFile(String filename) {
 
 
         // Read file
@@ -92,7 +92,8 @@ public class NewickParser {
                 stringBuffer.append(sCurrentLine);
             }
 
-            UnrootedTree t = parse();
+            //UnrootedTree t = parse();
+            UnrootedTree t = new UnrootedTree();
             return t;
 
         } catch (IOException e) {
@@ -144,7 +145,7 @@ public class NewickParser {
     }
 
 
-    public UnrootedTree parseStr(String inputStr) {
+    /*public UnrootedTree parseStr(String inputStr) {
 
         String str = inputStr;
         return parse();
@@ -152,7 +153,7 @@ public class NewickParser {
 
     public boolean isError() {
         return true;
-    }
+    }*/
 
 
     /*public int getPos() {
@@ -166,8 +167,9 @@ public class NewickParser {
     }*/
 
 
-    public UnrootedTree parse() {
-        parseError = false;
+    /*public UnrootedTree parse(String str) {
+
+        boolean parseError = false;
         char it = str.charAt(0);
         char strEnd = str.charAt(str.length()-1);
 
@@ -178,12 +180,14 @@ public class NewickParser {
         UnrootedTree t = parseSubTree();
         parseLength();
         if (it == strEnd) {
-            cerr << "Parse error! String is finished before ';'... Returning anyways!" << "\n";
+
+            System.out.println("Parse error! String is finished before ';'... Returning anyways!");
             parseError = true;
         } else {
             if (*it != ';')
             {
-                cerr << "Parse error! Finished before string finished! (Read '" <<*
+                System.out.println("Parse error! Finished before string finished! (Read");
+                System.out.println("on pos "+getPos()+", expecting ';'). Returning anyways);
                 it << "' on pos " << getPos() << ", expecting ';'). Returning anyways" << "\n";
                 parseError = true;
             }
@@ -195,9 +199,9 @@ public class NewickParser {
             }
         }
         return t;
-    }
+    }*/
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+    /*
     public UnrootedTree parseSubTree() {
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";
@@ -211,8 +215,8 @@ public class NewickParser {
         }
         // TODO: Other possibilities than name?!?
         return new UnrootedTree(parseName());
-    }
-
+    }*/
+    /*
     public UnrootedTree parseInternal() {
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";
@@ -252,9 +256,9 @@ public class NewickParser {
         internalNode.name = parseName();
 
         return internalNode;
-    }
+    }*/
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+    /*
     public void ParseBranchSet(UnrootedTree parent) {
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";
@@ -282,9 +286,9 @@ public class NewickParser {
             break;
         }
         parent.maxDegree = Math.max(degreeHere, largestDegreeBelow);
-    }
+    }*/
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+    /*
     public String parseName() {
         if (it == strEnd) {
             cerr << "Parse error! String ended! Continuing anyways..." << "\n";
@@ -308,9 +312,9 @@ public class NewickParser {
             }
         }
         return str.substr(nameStartPos, numChars);
-    }
+    }*/
 
-    //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
+    /*
     public void parseLength() {
         // Do we start a number?
         if (it == strEnd) {
@@ -337,5 +341,5 @@ public class NewickParser {
                 break;
             }
         }
-    }
+    }*/
 }
