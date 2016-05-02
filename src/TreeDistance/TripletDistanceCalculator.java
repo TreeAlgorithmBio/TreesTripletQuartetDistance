@@ -98,11 +98,12 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         return totalNoTriplets - resolvedTriplets - unresolvedTriplets;
     }
 
-    public final ArrayList<ArrayList<long>> calculateAllPairsTripletDistance(String filename) {
+    public final ArrayList<ArrayList<Long>> calculateAllPairsTripletDistance(String filename) {
 
         NewickParser parser = new NewickParser();
+        
 
-        ArrayList<UnrootedTree> unrootedTrees = parser.parseMultiFile(filename);
+        ArrayList<UnrootedTree> unrootedTrees = parser.parseMultiFilez(filename);
         if (unrootedTrees.size() == 0 || parser.isError()) {
 
             System.out.println("Error: Parsing of \"+filename1+\"failed.");
@@ -110,7 +111,7 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
             System.exit(-1);
         }
 
-        ArrayList<ArrayList<Long>> results = calculateAllPairsTripletDistance(unrootedTrees);
+        //ArrayList<ArrayList<Long>> results = calculateAllPairsTripletDistance(unrootedTrees);
 
         for (Iterator<UnrootedTree> it = unrootedTrees.iterator(); it.hasNext(); ) {
             delete(it.next());
