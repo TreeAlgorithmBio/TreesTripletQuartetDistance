@@ -6,15 +6,15 @@ import java.util.ArrayList;
 //C++ TO JAVA CONVERTER TODO TASK: Java has no concept of 'private' inheritance:
 //ORIGINAL LINE: class QuartetDistanceCalculator : private AbstractDistanceCalculator
 public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
-    private INTTYPE_N4 n = new INTTYPE_N4();
-    private INTTYPE_N4 totalNoQuartets = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsAgree = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsAgreeDiag = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsDisagree = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsDisagreeDiag = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsAgreeUpper = new INTTYPE_N4();
-    private INTTYPE_N4 resolvedQuartetsDisagreeUpper = new INTTYPE_N4();
-    private INTTYPE_N4 unresolvedQuartets = new INTTYPE_N4();
+    private long n;
+    private long totalNoQuartets;
+    private long resolvedQuartetsAgree;
+    private long resolvedQuartetsAgreeDiag;
+    private long resolvedQuartetsDisagree;
+    private long resolvedQuartetsDisagreeDiag;
+    private long resolvedQuartetsAgreeUpper;
+    private long resolvedQuartetsDisagreeUpper;
+    private long unresolvedQuartets;
 
 
     public QuartetDistanceCalculator() {
@@ -25,7 +25,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         dummyHDTFactory = null;
     }
 
-    public final INTTYPE_N4 calculateQuartetDistance(String filename1, String filename2) {
+    public final long calculateQuartetDistance(String filename1, String filename2) {
         UnrootedTree ut1 = null;
         UnrootedTree ut2 = null;
         NewickParser parser = new NewickParser();
@@ -44,7 +44,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
             return -1;
         }
 
-        INTTYPE_N4 res = calculateQuartetDistance(ut1, ut2);
+        long res = calculateQuartetDistance(ut1, ut2);
 
         if (ut1 != null)
             ut1.dispose();
@@ -54,7 +54,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         return res;
     }
 
-    public final INTTYPE_N4 calculateQuartetDistance(UnrootedTree t1, UnrootedTree t2) {
+    public final long calculateQuartetDistance(UnrootedTree t1, UnrootedTree t2) {
 
         UnrootedTree tmp;
         if (t1.maxDegree > t2.maxDegree) { // Smallest degree tree as t1
@@ -93,10 +93,10 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
 
         n = this.t1.n;
         totalNoQuartets = Util.binom4(n);
-        INTTYPE_N4 a = resolvedQuartetsAgree + resolvedQuartetsAgreeDiag + resolvedQuartetsAgreeUpper;
-        INTTYPE_N4 e = unresolvedQuartets;
+        long a = resolvedQuartetsAgree + resolvedQuartetsAgreeDiag + resolvedQuartetsAgreeUpper;
+        long e = unresolvedQuartets;
 
-        INTTYPE_N4 result = totalNoQuartets - (a + e);
+        long result = totalNoQuartets - (a + e);
 
         this.t1.factory = null;
         this.t2.factory = null;
@@ -105,7 +105,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         return result;
     }
 
-    public final ArrayList<ArrayList<INTTYPE_N4>> calculateAllPairsQuartetDistance(String filename) {
+    public final ArrayList<ArrayList<long>> calculateAllPairsQuartetDistance(String filename) {
         NewickParser parser = new NewickParser();
 
         ArrayList<UnrootedTree> unrootedTrees = parser.parseMultiFile(filename);
@@ -115,7 +115,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
             System.exit(-1);
         }
 
-        final ArrayList<ArrayList<INTTYPE_N4>> results = calculateAllPairsQuartetDistance(unrootedTrees);
+        final ArrayList<ArrayList<long>> results = calculateAllPairsQuartetDistance(unrootedTrees);
 
         for (int i = 0; i < unrootedTrees.size(); ++i) {
             UnrootedTree tmp = unrootedTrees.get(i);
@@ -126,12 +126,12 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         return results;
     }
 
-    public final ArrayList<ArrayList<INTTYPE_N4>> calculateAllPairsQuartetDistance(ArrayList<UnrootedTree*>trees) {
-        ArrayList<ArrayList<INTTYPE_N4>> results = new ArrayList<ArrayList<INTTYPE_N4>>(trees.size());
+    public final ArrayList<ArrayList<long>> calculateAllPairsQuartetDistance(ArrayList<UnrootedTree>trees) {
+        ArrayList<ArrayList<long>> results = new ArrayList<ArrayList<long>>(trees.size());
 
         for (int r = 0; r < trees.size(); ++r) {
             for (int c = 0; c < r; ++c) {
-                INTTYPE_N4 distance = calculateQuartetDistance(trees.get(r), trees.get(c));
+                long distance = calculateQuartetDistance(trees.get(r), trees.get(c));
                 results.get(r).add(distance);
             }
             results.get(r).add(0);
@@ -140,11 +140,11 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         return results;
     }
 
-    public final ArrayList<INTTYPE_N4> pairs_quartet_distance(ArrayList<UnrootedTree> unrootedTrees1, ArrayList<UnrootedTree> unrootedTrees2) {
-        ArrayList<INTTYPE_N4> res = new ArrayList<INTTYPE_N4>();
+    public final ArrayList<long> pairs_quartet_distance(ArrayList<UnrootedTree> unrootedTrees1, ArrayList<UnrootedTree> unrootedTrees2) {
+        ArrayList<long> res = new ArrayList<long>();
 
         for (int i = 0; i < unrootedTrees1.size(); i++) {
-            INTTYPE_N4 dist = calculateQuartetDistance(unrootedTrees1.get(i), unrootedTrees2.get(i));
+            long dist = calculateQuartetDistance(unrootedTrees1.get(i), unrootedTrees2.get(i));
 
             res.add(dist);
         }
@@ -154,21 +154,21 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
 
     public final void pairs_quartet_distance_verbose(std.ostream out, ArrayList<UnrootedTree> unrootedTrees1, ArrayList<UnrootedTree> unrootedTrees2) {
         for (int i = 0; i < unrootedTrees1.size(); i++) {
-            INTTYPE_N4 dist = calculateQuartetDistance(unrootedTrees1.get(i), unrootedTrees2.get(i));
+            long dist = calculateQuartetDistance(unrootedTrees1.get(i), unrootedTrees2.get(i));
 
-            INTTYPE_N4 resolvedQuartetsAgree = get_resolvedQuartetsAgree();
-            INTTYPE_N4 resolvedQuartetsAgreeDiag = get_resolvedQuartetsAgreeDiag();
-            INTTYPE_N4 resolvedQuartetsDisagree = get_resolvedQuartetsDisagree();
-            INTTYPE_N4 resolvedQuartetsDisagreeDiag = get_resolvedQuartetsDisagreeDiag();
-            INTTYPE_N4 resolvedQuartetsAgreeUpper = get_resolvedQuartetsAgreeUpper();
-            INTTYPE_N4 resolvedQuartetsDisagreeUpper = get_resolvedQuartetsDisagreeUpper();
+            long resolvedQuartetsAgree = get_resolvedQuartetsAgree();
+            long resolvedQuartetsAgreeDiag = get_resolvedQuartetsAgreeDiag();
+            long resolvedQuartetsDisagree = get_resolvedQuartetsDisagree();
+            long resolvedQuartetsDisagreeDiag = get_resolvedQuartetsDisagreeDiag();
+            long resolvedQuartetsAgreeUpper = get_resolvedQuartetsAgreeUpper();
+            long resolvedQuartetsDisagreeUpper = get_resolvedQuartetsDisagreeUpper();
 
-            INTTYPE_N4 n = get_n();
-            INTTYPE_N4 totalNoQuartets = get_totalNoQuartets();
+            long n = get_n();
+            long totalNoQuartets = get_totalNoQuartets();
             double dist_norm = (double) dist / (double) totalNoQuartets;
-            INTTYPE_N4 resAgree = resolvedQuartetsAgree + resolvedQuartetsAgreeDiag + resolvedQuartetsAgreeUpper;
+            long resAgree = resolvedQuartetsAgree + resolvedQuartetsAgreeDiag + resolvedQuartetsAgreeUpper;
             double resAgree_norm = (double) resAgree / (double) totalNoQuartets;
-            INTTYPE_N4 unresolvedQuartetsAgree = get_unresolvedQuartets();
+            long unresolvedQuartetsAgree;
             double unresolvedQuartetsAgree_norm = (double) unresolvedQuartetsAgree / (double) totalNoQuartets;
 
             System.out.print(n);
@@ -191,7 +191,7 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
         }
     }
 
-    public final ArrayList<INTTYPE_N4> pairs_quartet_distance(String filename1, String filename2) {
+    public final ArrayList<long> pairs_quartet_distance(String filename1, String filename2) {
         NewickParser parser = new NewickParser();
 
         ArrayList<UnrootedTree> unrootedTrees1 = parser.parseMultiFile(filename1);
@@ -212,39 +212,39 @@ public class QuartetDistanceCalculator extends AbstractDistanceCalculator {
     }
 
     // accessors
-    public final INTTYPE_N4 get_n() {
+    public final long get_n() {
         return n;
     }
 
-    public final INTTYPE_N4 get_totalNoQuartets() {
+    public final long get_totalNoQuartets() {
         return totalNoQuartets;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsAgree() {
+    public final long get_resolvedQuartetsAgree() {
         return resolvedQuartetsAgree;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsAgreeDiag() {
+    public final long get_resolvedQuartetsAgreeDiag() {
         return resolvedQuartetsAgreeDiag;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsDisagree() {
+    public final long get_resolvedQuartetsDisagree() {
         return resolvedQuartetsDisagree;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsDisagreeDiag() {
+    public final long get_resolvedQuartetsDisagreeDiag() {
         return resolvedQuartetsDisagreeDiag;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsAgreeUpper() {
+    public final long get_resolvedQuartetsAgreeUpper() {
         return resolvedQuartetsAgreeUpper;
     }
 
-    public final INTTYPE_N4 get_resolvedQuartetsDisagreeUpper() {
+    public final long get_resolvedQuartetsDisagreeUpper() {
         return resolvedQuartetsDisagreeUpper;
     }
 
-    public final INTTYPE_N4 get_unresolvedQuartets() {
+    public final long get_unresolvedQuartets() {
         return unresolvedQuartets;
     }
 

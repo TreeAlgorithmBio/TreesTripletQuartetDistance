@@ -267,8 +267,8 @@ public class HDT
 ///#endif
 
     // Summing resolved/resolved and unresolved/unresolved
-    //private INTTYPE_REST tripResolved = new INTTYPE_REST();
-    //private INTTYPE_REST tripUnresolved = new INTTYPE_REST();
+    private long tripResolved;
+    private long tripUnresolved;
 
     // Marking stuff as changed or updated
     private boolean up2date;

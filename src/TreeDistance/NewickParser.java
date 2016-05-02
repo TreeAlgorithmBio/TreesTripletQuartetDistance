@@ -72,7 +72,10 @@ public class NewickParser {
     }
 
 
-
+   public UnrootedTree parse() {
+       UnrootedTree t = new UnrootedTree();
+       return t;
+   }
 
    public UnrootedTree parseMultiFile(String filename) {
 
@@ -145,11 +148,11 @@ public class NewickParser {
     }
 
 
-    /*public UnrootedTree parseStr(String inputStr) {
+    public UnrootedTree parseStr(String inputStr) {
 
         String str = inputStr;
         return parse();
-    }*/
+    }
 
     public boolean isError() {
         return true;

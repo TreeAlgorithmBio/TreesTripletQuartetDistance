@@ -4,5 +4,5 @@ public abstract class TripletCalc {
     public void dispose() {
     }
 
-    public abstract INTTYPE_REST calculateTripletDistance(RootedTree t1, RootedTree t2);
+    public abstract long calculateTripletDistance(RootedTree t1, RootedTree t2);
 }

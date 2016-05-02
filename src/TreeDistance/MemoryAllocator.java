@@ -1,4 +1,5 @@
 package TreeDistance;
+import java.lang.reflect.Array;
 
 //C++ TO JAVA CONVERTER TODO TASK: The original C++ template specifier was replaced with a Java generic specifier, which may not produce the same behavior:
 //ORIGINAL LINE: template<class type>
@@ -38,7 +39,9 @@ public class MemoryAllocator<type> {
     }
 
     public final void getMoreSpace() {
-        type[] asRealType = tangible.Arrays.initializeWithDefaulttypeInstances(size * chunks + 1);
+        //type[] asRealType = new type [size * chunks + 1];
+        type[] arr = (type[])new Object[size * chunks + 1];
+
         if (createdList == null) {
 //C++ TO JAVA CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in Java:
             createdList = reinterpret_cast < voider * > (asRealType);

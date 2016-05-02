@@ -1,6 +1,22 @@
 package TreeDistance;
 
 public class HDTFactory {
+    
+    private HDT createdHDTs;
+    private HDT currentHDT;
+    private CountingLinkedList createdLL;
+    private CountingLinkedList currentLL;
+    private CountingLinkedListNumOnly createdLLNO;
+    private CountingLinkedListNumOnly currentLLNO;
+    private TemplatedLinkedList<HDT> createdTLL;
+    private TemplatedLinkedList<HDT> currentTLL;
+    private int hdtLocation, llLocation, llnoLocation, currentLocationTLL;
+    private int numD;
+    private MemoryAllocator<HDT> memHDT;
+    private MemoryAllocator<CountingLinkedList> memCLL;
+    private MemoryAllocator<CountingLinkedListNumOnly> memCLLNO;
+    private MemoryAllocator<TemplatedLinkedList<HDT> > memTLL;
+    
 
     public HDTFactory(int numD, HDTFactory copyMemAllocFrom) {
         this.numD = numD;
@@ -9,7 +25,7 @@ public class HDTFactory {
             memHDT = new MemoryAllocator<HDT>(DefineConstants.HDTFactorySize + 1);
             memCLL = new MemoryAllocator<CountingLinkedList>(DefineConstants.HDTFactorySize + 1);
             memCLLNO = new MemoryAllocator<CountingLinkedListNumOnly>(DefineConstants.HDTFactorySize + 1);
-            memTLL = new MemoryAllocator<TemplatedLinkedList<HDT * >> (DefineConstants.HDTFactorySize + 1);
+            memTLL = new MemoryAllocator<TemplatedLinkedList<HDT  >> (DefineConstants.HDTFactorySize + 1);
         } else {
             memHDT = copyMemAllocFrom.memHDT;
             memCLL = copyMemAllocFrom.memCLL;
@@ -43,10 +59,6 @@ public class HDTFactory {
     }
 
     public HDTFactory() {
-
-    }
-
-    public void dispose() {
         {
             HDT current = createdHDTs;
             while (current != null) {
@@ -82,6 +94,7 @@ public class HDTFactory {
                 current = next;
             }
         }
+    
 
         memHDT.numUses--;
         if (memHDT.numUses == 0) {
@@ -100,7 +113,8 @@ public class HDTFactory {
             memTLL = null;
         }
     }
-
+    
+       
     //C++ TO JAVA CONVERTER WARNING: The original C++ declaration of the following method implementation was not found:
     public void deleteTemplatedLinkedList() {
         TemplatedLinkedList<HDT> current = createdTLL;
@@ -121,7 +135,8 @@ public class HDTFactory {
             hdtLocation = 1;
         }
 
-        HDT returnMe = currentHDT[hdtLocation];
+        //HDT returnMe = currentHDT[hdtLocation];
+        HDT returnMe = currentHDT;
         returnMe.initialize(getLL(), type, numD, link, doLink);
         returnMe.factory = this;
         hdtLocation++;
@@ -137,7 +152,8 @@ public class HDTFactory {
             llLocation = 1;
         }
 
-        CountingLinkedList returnMe = currentLL[llLocation];
+        //CountingLinkedList returnMe = currentLL[llLocation];
+        CountingLinkedList returnMe = currentLL;
         returnMe.initialize();
         llLocation++;
         return returnMe;
@@ -152,7 +168,8 @@ public class HDTFactory {
             llnoLocation = 1;
         }
 
-        CountingLinkedListNumOnly returnMe = currentLLNO[llnoLocation];
+        //CountingLinkedListNumOnly returnMe = currentLLNO[llnoLocation];
+        CountingLinkedListNumOnly returnMe = currentLLNO;
         returnMe.initialize();
         llnoLocation++;
         return returnMe;
@@ -167,7 +184,8 @@ public class HDTFactory {
             currentLocationTLL = 1;
         }
 
-        TemplatedLinkedList<HDT> returnMe = currentTLL[currentLocationTLL];
+        //TemplatedLinkedList<HDT> returnMe = currentTLL[currentLocationTLL];
+        TemplatedLinkedList<HDT> returnMe = currentTLL;
         returnMe.initialize();
         currentLocationTLL++;
         return returnMe;
