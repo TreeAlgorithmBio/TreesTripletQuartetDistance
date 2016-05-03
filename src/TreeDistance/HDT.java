@@ -150,6 +150,32 @@ public class HDT
         extractAndGoBackImpl(null, factory);
         return goBackVariable;
     }
+    
+    public void handleLeaf()
+    {
+        
+    }
+    
+    public void handleCCToC()
+    {
+        
+    }
+    
+    public void handleIGToC()
+    {
+        
+    }
+    
+    public void handleCTransform()
+    {
+        
+    }
+    
+    public void handleG()
+    {
+        
+    }
+    
     public final void updateCounters()
     {
         if (this.convertedFrom == NodeType.C && this.left == null && this.right == null)
@@ -681,6 +707,8 @@ public class HDT
             System.out.print("Didn't expect this type combination...");
             System.out.print("\n");
             System.exit(-1);
+            //FRANK ADD TO RETURN NOTHING
+            return null;
         }
     }
 //C++ TO JAVA CONVERTER TODO TASK: The implementation of the following method could not be found:
