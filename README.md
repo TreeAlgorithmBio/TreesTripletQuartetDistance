@@ -2,6 +2,13 @@
 
 Phylogeny is the study of the evolutionary relationships between a set of organisms. Phylogenetic trees, are a graphical representation of these relationships.
 
+We have partially implemented the algorithm for:
+
+Brodal GS, et al ACM-SIAM Symposium on Discrete Algorithms (SODA)New
+Orleans, Louisiana, USA. Philadelphia, USA: Society for Industrial and Applied
+Mathematics (SIAM); 2013. “ Efficient algorithms for computing the triplet and
+quartet distance between trees of arbitrary degree ”; p. 1814-1832
+
 Few Definitions before you dive into the code.
 
 Newick Format & Parsing:
@@ -25,13 +32,6 @@ Triplet and Quartet Distance:
 Triplet Distance is between set of three leaves for two trees. Quartet Distance is between
 set of four leaves. Distance here is calculated as number of triplets/quartets with
 different structure in the two trees.
-
-We have partially implemented the algorithm for:
-
-Brodal GS, et al ACM-SIAM Symposium on Discrete Algorithms (SODA)New
-Orleans, Louisiana, USA. Philadelphia, USA: Society for Industrial and Applied
-Mathematics (SIAM); 2013. “ Efficient algorithms for computing the triplet and
-quartet distance between trees of arbitrary degree ”; p. 1814-1832
 
 Our codebase is highly inspired from :
 
