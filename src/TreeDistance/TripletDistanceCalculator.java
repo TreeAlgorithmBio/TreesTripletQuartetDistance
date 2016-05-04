@@ -3,10 +3,8 @@ package TreeDistance;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-///#else
-//C++ TO JAVA CONVERTER TODO TASK: Java has no concept of 'private' inheritance:
-//ORIGINAL LINE: class TripletDistanceCalculator : private AbstractDistanceCalculator
 public class TripletDistanceCalculator extends AbstractDistanceCalculator {
+
     private long n ;
     private long totalNoTriplets ;
     private long resolvedTriplets ;
@@ -21,6 +19,7 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
     }
 
     public final long calculateTripletDistance(String filename1, String filename2) {
+
         UnrootedTree ut1 = null;
         UnrootedTree ut2 = null;
         RootedTree rt1 = null;
@@ -120,6 +119,8 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         return results;
     }
 
+
+
     public final ArrayList<ArrayList<long>> calculateAllPairsTripletDistance(ArrayList<UnrootedTree*>trees) {
         ArrayList<ArrayList<long>> results = new ArrayList<ArrayList<long>>(trees.size());
 
@@ -189,16 +190,18 @@ public class TripletDistanceCalculator extends AbstractDistanceCalculator {
         NewickParser parser = new NewickParser();
 
         ArrayList<UnrootedTree> unrootedTrees1 = parser.parseMultiFile(filename1);
+
         if (unrootedTrees1.size() == 0 || parser.isError()) {
-            std.cerr << "Error: Parsing of \"" << filename1 << "\" failed." << "\n";
-            std.cerr << "Aborting!" << "\n";
+            System.out.println("Error: Parsing of "+filename1+" failed." );
+            System.out.println("Aborting!" );
             System.exit(-1);
         }
 
         ArrayList<UnrootedTree> unrootedTrees2 = parser.parseMultiFile(filename2);
+
         if (unrootedTrees2.size() == 0 || parser.isError()) {
-            std.cerr << "Error: Parsing of \"" << filename2 << "\" failed." << "\n";
-            std.cerr << "Aborting!" << "\n";
+            System.out.println("Error: Parsing of "+filename2+" failed." );
+            System.out.println("Aborting!" );
             System.exit(-1);
         }
 

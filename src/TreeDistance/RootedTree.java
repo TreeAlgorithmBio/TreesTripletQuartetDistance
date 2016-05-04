@@ -41,8 +41,6 @@ public class RootedTree {
         numChildren++;
         t.parent = this;
         TemplatedLinkedList<RootedTree> newItem = factory.getTemplatedLinkedList();
-
-        //ORIGINAL LINE: newItem->data = t;
         newItem.data=t;
         newItem.next = children;
         children = newItem;
@@ -52,10 +50,7 @@ public class RootedTree {
         return parent;
     }
 
-    //C++ TO JAVA CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		INTTYPE_REST getUnresolvedTriplets();
-//C++ TO JAVA CONVERTER TODO TASK: The implementation of the following method could not be found:
-//		INTTYPE_N4 getUnresolvedQuartets();
+
     public void toDot() {
         System.out.print("digraph g {");
         System.out.print("\n");
@@ -77,9 +72,8 @@ public class RootedTree {
         ArrayList<RootedTree> l = t.getList();
         TreeMap<String, RootedTree> altWorldLeaves = new TreeMap<String, RootedTree>();
 
-        //C++ TO JAVA CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
         for (Iterator<RootedTree> i = l.iterator(); i != l.end(); i++) {
-            //C++ TO JAVA CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
+
             RootedTree leaf = i;
             altWorldLeaves.put(leaf.name, leaf);
         }
@@ -90,7 +84,7 @@ public class RootedTree {
         Iterator<String, RootedTree> altWorldEnd = altWorldLeaves.end();
         //C++ TO JAVA CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
         for (Iterator<RootedTree> i = l.iterator(); i != l.end(); i++) {
-            //C++ TO JAVA CONVERTER TODO TASK: Iterators are only converted within the context of 'while' and 'for' loops:
+
             RootedTree leaf = i;
             Iterator<String, RootedTree> j = altWorldLeaves.find(leaf.name);
             if (j == altWorldEnd) {

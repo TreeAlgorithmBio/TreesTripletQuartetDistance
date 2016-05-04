@@ -3,7 +3,7 @@ package TreeDistance;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class UnrootedTree {
+public class UnrootedTree extends ArrayList<UnrootedTree> {
 
     public String name;
     public int level;

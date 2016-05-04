@@ -1,0 +1,37 @@
+// Read file
+  ifstream infile;
+
+  // Open file at the end!
+  infile.open(filename);
+  if (infile) {
+    std::string line;
+    std::stringstream ss;
+    while(true) {
+      getline(infile, line);
+      line = trim_comment(line);
+      line = rtrim(line);
+      if(emptyLine(line)) {
+	continue;
+      }
+      ss << line;
+      if(infile.eof()) {
+	str = ss.str();
+	break;
+      }
+      if(line[line.size()-1] == ';') {
+	str = ss.str();
+	break;
+      }
+    }
+    infile.close();
+
+    // replace all whitespace
+    eraseWhitespace(str);
+
+    UnrootedTree *t = parse();
+    return t;
+  } else { // Couldn't open file!
+    cerr << "Couldn't open file \"" << filename << "\"!" << std::endl;
+    parseError = true;
+    std::exit(-1);
+  }

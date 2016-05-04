@@ -44,12 +44,11 @@ public class MemoryAllocator<type> {
 
         if (createdList == null) {
 //C++ TO JAVA CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in Java:
-            createdList = reinterpret_cast < voider * > (asRealType);
-            createdList.next = null;
+            //createdList.next = null;
             currentList = createdList;
         } else {
 //C++ TO JAVA CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in Java:
-            currentList.next = reinterpret_cast < voider * > (asRealType);
+            //currentList.next = reinterpret_cast < voider * > (asRealType);
             currentList = currentList.next;
             currentList.next = null;
         }
@@ -57,7 +56,7 @@ public class MemoryAllocator<type> {
 //C++ TO JAVA CONVERTER WARNING: Unsigned integer types have no direct equivalent in Java:
 //ORIGINAL LINE: for(unsigned int i = 0; i < chunks; i++)
         for (int i = 0; i < chunks; i++) {
-            releaseMemory(asRealType[i * size + 1]);
+            //releaseMemory(asRealType[i * size + 1]);
         }
     }
 
@@ -69,7 +68,8 @@ public class MemoryAllocator<type> {
         voider returnThis = freelist;
         freelist = freelist.next;
 //C++ TO JAVA CONVERTER TODO TASK: There is no equivalent to 'reinterpret_cast' in Java:
-        return reinterpret_cast < type * > (returnThis); // cast (and don't call constructor)
+        //return reinterpret_cast < type * > (returnThis); // cast (and don't call constructor)
+        return 0;
     }
 
     public final void releaseMemory(type mem) {
